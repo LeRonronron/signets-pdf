@@ -1,0 +1,7 @@
+# Fichiers qui restent sur ce PC (pas envoyés sur GitHub)
+.venv/
+tessdata/
+__pycache__/
+*.pyc
+.claude/
+*.pdf

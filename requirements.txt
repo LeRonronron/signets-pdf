@@ -1,0 +1,5 @@
+# Bibliothèques Python (versions testées)
+pymupdf==2.1
+rapidfuzz==3.14.6
+streamlit==1.67.0
+ocrmypdf==17.14.2
