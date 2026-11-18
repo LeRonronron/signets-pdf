@@ -22,15 +22,19 @@ Le fichier explique les deux possibilités.
 
 Chez **Cloudflare Registrar** (prix coûtant), **OVH** ou **Gandi**. Par exemple `signets-pdf.fr`.
 
-## Étape 2 — Louer le serveur (≈ 4 à 8 € par mois)
+## Étape 2 — Louer le serveur (≈ 5 à 8 € par mois)
 
-Conseillé : **Hetzner Cloud** (https://www.hetzner.com/cloud), serveur en Allemagne ou en Finlande, donc
-dans l'Union européenne.
-1. Créez un compte, puis un projet, puis **Add Server**.
-2. Image : **Ubuntu 24.04**. Type : une petite machine avec **2 à 4 processeurs et 4 Go de mémoire
-   ou plus** (la gamme « CX » ou « CAX » d'entrée de gamme suffit).
-3. Accès : une **clé SSH** (recommandé) ou un mot de passe envoyé par e-mail.
-4. Notez l'**adresse IP** du serveur (quatre nombres, par exemple `95.217.12.34`).
+Choix retenu : **OVHcloud VPS-1** (2 cœurs, 4 Go, Gravelines, France), sans engagement,
+4,49 € HT soit environ 5,39 € TTC par mois.
+1. Commandez sur https://www.ovhcloud.com/fr/vps/ : **VPS-1**, **Aucun engagement**, système
+   **Ubuntu 24.04**.
+2. Dans l'espace client (**Bare Metal Cloud → VPS**), utilisez **Réinstaller mon VPS** avec Ubuntu 24.04
+   et collez votre **clé SSH publique** : la connexion se fait alors sans mot de passe.
+3. Notez l'**adresse IPv4** du VPS (quatre nombres).
+   Sur OVH, l'utilisateur s'appelle `ubuntu` : connectez-vous avec `ssh ubuntu@ADRESSE-IP`, puis
+   lancez les commandes avec `sudo`.
+
+(Hetzner Cloud est une bonne alternative, un peu moins chère, mais demande une vérification de compte.)
 
 ## Étape 3 — Faire pointer le domaine vers le serveur
 
@@ -50,7 +54,13 @@ certificat HTTPS ne pourra pas être obtenu. La prise en compte prend de quelque
 Dans PowerShell, sur votre PC :
 
 ```bash
-ssh root@ADRESSE-IP-DU-SERVEUR
+ssh ubuntu@ADRESSE-IP-DU-SERVEUR
+```
+
+puis passez administrateur :
+
+```bash
+sudo -i
 ```
 
 Puis, sur le serveur, copiez ces commandes l'une après l'autre :
