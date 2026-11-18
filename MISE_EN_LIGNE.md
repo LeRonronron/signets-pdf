@@ -1,5 +1,7 @@
 # Le site en ligne (Streamlit Community Cloud, gratuit)
 
+**Adresse du site : https://signets-pdf.streamlit.app**
+
 Le site tourne sur **Streamlit Community Cloud**, l'hébergement gratuit des créateurs de Streamlit.
 Il lit les fichiers du dépôt GitHub `LeRonronron/signets-pdf` et reconstruit le site tout seul
 à chaque modification.
