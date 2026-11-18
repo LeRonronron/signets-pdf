@@ -1,0 +1,21 @@
+# Réglages de Streamlit (lus automatiquement au lancement)
+
+[server]
+# Taille maximale d'un fichier déposé, en Mo (les gros scans dépassent souvent 300 Mo)
+maxUploadSize = 1000
+maxMessageSize = 1000
+
+[browser]
+# Pas de statistiques d'utilisation envoyées à Streamlit
+gatherUsageStats = false
+
+[logger]
+# Journal minimal : aucun nom de fichier n'est écrit
+level = "error"
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = false
+
+[theme]
+base = "light"
