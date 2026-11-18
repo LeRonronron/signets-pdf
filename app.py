@@ -235,4 +235,15 @@ def main():
     afficher_liste_texte(analyse, liens_retour)
 
 
+def afficher_pied_de_page():
+    """Liens vers les pages légales du site vitrine (seulement si un domaine est configuré)."""
+    domaine = os.environ.get("DOMAINE", "").strip()
+    if domaine:
+        st.divider()
+        st.caption(f"[Accueil](https://{domaine}/) · [Mentions légales](https://{domaine}/mentions-legales.html)"
+                   f" · [Confidentialité](https://{domaine}/confidentialite.html)"
+                   f" · [Conditions d'utilisation](https://{domaine}/conditions.html)")
+
+
 main()
+afficher_pied_de_page()

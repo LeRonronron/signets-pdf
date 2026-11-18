@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajouter des signets à un PDF et rendre le sommaire cliquable – Signets PDF</title>
+  <meta name="description" content="Outil gratuit en ligne : ajoutez automatiquement des signets (table des matières cliquable) à un livre PDF, même scanné, et rendez son sommaire imprimé cliquable. Sans inscription, fichiers effacés après traitement.">
+  <link rel="canonical" href="https://__DOMAINE__/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="theme-color" content="#b4232f">
+
+  <!-- Aperçu lors d'un partage (réseaux sociaux, messageries) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Signets PDF">
+  <meta property="og:title" content="Signets PDF – une table des matières cliquable pour vos livres PDF">
+  <meta property="og:description" content="Déposez un livre PDF, même scanné : signets et sommaire cliquable ajoutés automatiquement, pages vérifiées une à une.">
+  <meta property="og:url" content="https://__DOMAINE__/">
+  <meta property="og:image" content="https://__DOMAINE__/apercu.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Données structurées pour Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Signets PDF",
+    "url": "https://__DOMAINE__/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Tous (navigateur web)",
+    "inLanguage": "fr",
+    "description": "Ajoute automatiquement des signets et un sommaire cliquable aux livres PDF, y compris scannés (OCR).",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Qu'est-ce qu'un signet dans un PDF ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "C'est une entrée de la table des matières affichée dans la barre latérale du lecteur PDF (Acrobat, Firefox, Chrome, SumatraPDF…). Un clic mène directement au chapitre." } },
+      { "@type": "Question", "name": "L'outil marche-t-il sur un livre scanné ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui. Les pages sans texte sont lues automatiquement par reconnaissance de caractères (OCR, français et anglais). Le PDF rendu devient en plus cherchable." } },
+      { "@type": "Question", "name": "Comment l'outil gère-t-il le décalage entre pages imprimées et pages du PDF ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Il lit les numéros imprimés sur chaque page, ce qui absorbe la couverture, les pages en chiffres romains et les planches hors texte, puis vérifie que chaque titre se trouve bien sur la page visée." } },
+      { "@type": "Question", "name": "Mes fichiers sont-ils conservés ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non. Le livre est traité dans un dossier temporaire, effacé dès le téléchargement (ou au bout de deux heures au plus tard). Rien n'est journalisé." } },
+      { "@type": "Question", "name": "Est-ce gratuit ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, gratuit et sans inscription. Aucune intelligence artificielle ni service extérieur n'est utilisé." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="entete">
+  <div class="conteneur">
+    <a class="logo" href="/" aria-label="Signets PDF, accueil">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="3" width="20" height="26" rx="3" fill="#fff" stroke="currentColor" stroke-width="2"/><path d="M19 3v12l3-2.5 3 2.5V3z" fill="#b4232f"/><path d="M9 12h7M9 17h11M9 21h11M9 25h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Signets PDF
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#atouts">Points forts</a>
+      <a href="#faq">Questions</a>
+      <a class="bouton" href="https://app.__DOMAINE__/">Essayer</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="accroche">
+    <div class="conteneur">
+      <div>
+        <p class="surtitre">Outil gratuit en ligne</p>
+        <h1>Ajoutez des signets à vos livres PDF, et rendez le sommaire cliquable</h1>
+        <p class="intro">Déposez le PDF, cliquez sur « Lancer », téléchargez le livre avec sa table des
+          matières cliquable dans la barre latérale. Même scanné, même avec des pages en chiffres romains
+          ou des planches hors texte.</p>
+        <div class="actions">
+          <a class="bouton" href="https://app.__DOMAINE__/">Ajouter des signets à mon PDF</a>
+          <a class="bouton secondaire" href="#fonctionnement">Comment ça marche</a>
+        </div>
+        <ul class="garanties">
+          <li>Gratuit, sans inscription</li>
+          <li>Fichiers effacés après traitement</li>
+          <li>Livres scannés acceptés</li>
+        </ul>
+      </div>
+      <svg class="illustration" viewBox="0 0 520 380" role="img" aria-label="Un livre PDF avec sa barre de signets ouverte à gauche">
+        <rect x="1" y="1" width="518" height="378" rx="16" fill="#fff" stroke="#e4e1d8"/>
+        <rect x="1" y="1" width="518" height="40" rx="16" fill="#f3f1ec"/>
+        <rect x="1" y="25" width="518" height="16" fill="#f3f1ec"/>
+        <circle cx="24" cy="21" r="6" fill="#e4a39f"/><circle cx="44" cy="21" r="6" fill="#e9cf8f"/><circle cx="64" cy="21" r="6" fill="#a9d3b5"/>
+        <rect x="1" y="41" width="180" height="338" fill="#faf8f4"/>
+        <text x="20" y="70" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1d2330">Signets</text>
+        <g font-family="system-ui, sans-serif" font-size="12" fill="#1d2330">
+          <text x="20" y="100">▾ Chapitre 1 – Espaces</text>
+          <text x="36" y="122" fill="#5b6475">1.1 Produit scalaire</text>
+          <text x="36" y="144" fill="#5b6475">1.2 Orthonormalisation</text>
+          <rect x="12" y="156" width="160" height="24" rx="6" fill="#fbecec"/>
+          <text x="20" y="172" fill="#b4232f" font-weight="700">▾ Chapitre 2 – Séries</text>
+          <text x="36" y="196" fill="#5b6475">2.1 Coefficients</text>
+          <text x="36" y="218" fill="#5b6475">2.2 Parseval</text>
+          <text x="20" y="246">▸ Chapitre 3 – Opérateurs</text>
+          <text x="20" y="272">▸ Chapitre 4 – Espaces Lp</text>
+          <text x="20" y="298">▸ Index</text>
+        </g>
+        <rect x="222" y="62" width="256" height="300" rx="6" fill="#fff" stroke="#e4e1d8"/>
+        <text x="246" y="104" font-family="Georgia, serif" font-size="13" fill="#5b6475">Chapitre 2</text>
+        <text x="246" y="134" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#1d2330">Séries de Fourier</text>
+        <g stroke="#d9d5cb" stroke-width="6" stroke-linecap="round">
+          <path d="M246 170h208M246 188h196M246 206h208M246 224h170M246 254h208M246 272h200M246 290h208M246 308h150"/>
+        </g>
+        <path d="M200 168 l18 0 m-7 -7 l7 7 l-7 7" stroke="#b4232f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="fonctionnement" class="alterne">
+    <div class="conteneur">
+      <h2>Comment ajouter des signets à un PDF</h2>
+      <p class="sous-titre">Fini les listes « titre → page » à recopier à la main dans un logiciel : l'outil lit
+        lui-même le sommaire du livre et retrouve chaque chapitre.</p>
+      <ol class="etapes">
+        <li><h3>Déposez votre livre PDF</h3><p>Texte sélectionnable ou scan : les pages sans texte passent
+          automatiquement à l'OCR (français et anglais).</p></li>
+        <li><h3>Cliquez sur « Lancer »</h3><p>L'outil trouve le sommaire, au début ou à la fin du livre, puis
+          cale chaque titre sur la vraie page du PDF et le vérifie.</p></li>
+        <li><h3>Téléchargez le résultat</h3><p>Signets dans la barre latérale, sommaire imprimé cliquable,
+          petit lien « ↩ sommaire » en tête de chaque chapitre.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="atouts">
+    <div class="conteneur">
+      <h2>Pensé pour les vrais livres, pas seulement les PDF parfaits</h2>
+      <p class="sous-titre">Le piège habituel des outils automatiques : le sommaire donne la page imprimée,
+        alors que le PDF compte aussi la couverture, les pages blanches et les planches. Ici, c'est le cœur
+        du travail.</p>
+      <div class="atouts">
+        <div class="atout"><h3>Décalages de pages absorbés</h3><p>Pages en chiffres romains, planche hors texte
+          non numérotée au milieu du livre : les numéros imprimés sont relus page par page.</p></div>
+        <div class="atout"><h3>Chaque signet vérifié</h3><p>Le titre est recherché sur la page visée. Les cas
+          douteux sont signalés, jamais corrigés en silence, avec une miniature pour ajuster d'un clic.</p></div>
+        <div class="atout"><h3>Livres scannés</h3><p>OCR des seules pages sans texte, nettoyage des titres mal lus.
+          Le PDF obtenu devient aussi cherchable.</p></div>
+        <div class="atout"><h3>Sommaire à la fin</h3><p>Courant dans les livres français : le sommaire est cherché
+          au début et à la fin du livre.</p></div>
+        <div class="atout"><h3>Rendu inchangé</h3><p>Les liens du sommaire sont invisibles : le livre s'affiche
+          exactement comme avant, au pixel près.</p></div>
+        <div class="atout"><h3>Confidentiel</h3><p>Aucune IA, aucun service extérieur. Le fichier est effacé du
+          serveur dès le téléchargement.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alterne">
+    <div class="conteneur exemple">
+      <div>
+        <h2>Un bilan clair, des corrections faciles</h2>
+        <p class="sous-titre">Après traitement, l'outil indique combien de signets il a pu confirmer. S'il a un
+          doute, vous corrigez avec une miniature de la page et des boutons ± 1, ou en modifiant la liste
+          sous forme de texte.</p>
+        <p class="bilan">156 signets posés, 156 confirmés, 0 douteux</p>
+      </div>
+      <pre aria-label="Exemple de liste de signets au format texte">Introduction                          | 11
+Chapitre 1 – Espaces préhilbertiens   | 15
+  1.1 Produit scalaire                | 15
+  1.2 Orthonormalisation              | 22
+Chapitre 2 – Séries de Fourier        | 31
+  2.1 Coefficients de Fourier         | 32</pre>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="conteneur">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Qu'est-ce qu'un signet dans un PDF ?</summary>
+        <p>C'est une entrée de la table des matières affichée dans la barre latérale du lecteur PDF (Acrobat,
+          Firefox, Chrome, SumatraPDF, Aperçu…). Un clic mène directement au chapitre.</p></details>
+      <details><summary>L'outil marche-t-il sur un livre scanné ?</summary>
+        <p>Oui. Les pages sans texte sont lues automatiquement par reconnaissance de caractères (OCR, français et
+          anglais). Le PDF rendu devient en plus cherchable.</p></details>
+      <details><summary>Comment sont gérés les décalages entre pages imprimées et pages du PDF ?</summary>
+        <p>L'outil lit les numéros imprimés sur chaque page, ce qui absorbe la couverture, les pages en chiffres
+          romains et les planches hors texte, puis vérifie que chaque titre se trouve bien sur la page visée.</p></details>
+      <details><summary>Que se passe-t-il si le livre n'a pas de sommaire ?</summary>
+        <p>L'outil le dit clairement au lieu de rendre un PDF sans signets. Vous pouvez alors fournir vous-même
+          la liste des chapitres sous forme de texte.</p></details>
+      <details><summary>Mes fichiers sont-ils conservés ?</summary>
+        <p>Non. Le livre est traité dans un dossier temporaire, effacé dès le téléchargement (ou au bout de deux
+          heures au plus tard). Rien n'est journalisé. Voir la <a href="/confidentialite.html">politique de
+          confidentialité</a>.</p></details>
+      <details><summary>Est-ce gratuit ? Y a-t-il une limite de taille ?</summary>
+        <p>C'est gratuit et sans inscription. Les livres sont acceptés jusqu'à 300 Mo ; un seul livre est traité
+          à la fois, il peut donc arriver qu'on vous demande de patienter quelques minutes.</p></details>
+    </div>
+  </section>
+
+  <section class="appel alterne">
+    <div class="conteneur">
+      <h2>Votre livre mérite une table des matières cliquable</h2>
+      <p>Quelques secondes pour un PDF avec texte, quelques minutes pour un scan.</p>
+      <a class="bouton" href="https://app.__DOMAINE__/">Ajouter des signets à mon PDF</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="conteneur">
+    <span>Signets PDF – outil libre et gratuit</span>
+    <nav aria-label="Informations légales">
+      <a href="/mentions-legales.html">Mentions légales</a>
+      <a href="/confidentialite.html">Confidentialité</a>
+      <a href="/conditions.html">Conditions d'utilisation</a>
+      <a href="https://github.com/LeRonronron/signets-pdf">Code source</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

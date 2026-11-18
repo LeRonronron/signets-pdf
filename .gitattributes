@@ -1,0 +1,4 @@
+# Les scripts pour Linux doivent garder des fins de ligne Unix
+*.sh text eol=lf
+Caddyfile text eol=lf
+packages.txt text eol=lf

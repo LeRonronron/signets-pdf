@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# Le site complet sur un serveur (VPS) : deux « conteneurs » qui tournent ensemble.
+#   - outil : l'application Streamlit (signets.py + app.py), construite avec le Dockerfile
+#   - caddy : le serveur web. Il sert la page d'accueil (dossier site/), transmet
+#             app.VOTRE-DOMAINE à l'outil, et obtient tout seul les certificats HTTPS.
+# Réglages (nom de domaine, e-mail) : fichier .env, voir .env.exemple.
+# ---------------------------------------------------------------------------
+services:
+  outil:
+    build: ..
+    restart: unless-stopped
+    environment:
+      DOMAINE: ${DOMAINE}
+    # Réglages Streamlit pour un serveur public (les protections restent activées)
+    command:
+      - streamlit
+      - run
+      - app.py
+      - --server.port=8501
+      - --server.address=0.0.0.0
+      - --server.headless=true
+      - --server.maxUploadSize=${TAILLE_MAX_MO:-300}
+      - --browser.gatherUsageStats=false
+    expose:
+      - "8501"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      - outil
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAINE: ${DOMAINE}
+      EMAIL: ${EMAIL}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site_public:/srv/site:ro
+      - caddy_donnees:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_donnees:
+  caddy_config:

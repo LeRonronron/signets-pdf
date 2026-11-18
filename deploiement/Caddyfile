@@ -1,0 +1,42 @@
+# Serveur web Caddy : HTTPS automatique (certificats Let's Encrypt gratuits).
+# Les valeurs {$DOMAINE} et {$EMAIL} viennent du fichier .env.
+
+{
+	email {$EMAIL}
+}
+
+# Page d'accueil : https://VOTRE-DOMAINE
+{$DOMAINE} {
+	root * /srv/site
+	encode zstd gzip
+	file_server
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
+
+# www.VOTRE-DOMAINE → VOTRE-DOMAINE
+www.{$DOMAINE} {
+	redir https://{$DOMAINE}{uri} permanent
+}
+
+# L'outil : https://app.VOTRE-DOMAINE
+app.{$DOMAINE} {
+	request_body {
+		max_size 1GB
+	}
+	reverse_proxy outil:8501
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+}
+
+# Aucun journal des visites n'est écrit (pas de directive « log »).

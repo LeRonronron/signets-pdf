@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://__DOMAINE__/</loc><priority>1.0</priority></url>
+  <url><loc>https://__DOMAINE__/confidentialite.html</loc><priority>0.3</priority></url>
+  <url><loc>https://__DOMAINE__/conditions.html</loc><priority>0.2</priority></url>
+  <url><loc>https://__DOMAINE__/mentions-legales.html</loc><priority>0.2</priority></url>
+</urlset>

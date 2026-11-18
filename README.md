@@ -26,6 +26,8 @@ serveur après le téléchargement.
 | `tests/` | Faux livres piégés et vérification automatique (copie locale) |
 | `Dockerfile` | Pour un hébergement Docker (Hugging Face PRO, etc.), facultatif |
 | `MISE_EN_LIGNE.md` | Comment le site est publié (Streamlit Community Cloud, gratuit) |
+| `site/` | La page d'accueil du « vrai site » (référencement Google) et les pages légales |
+| `deploiement/` | Le kit serveur : Docker, Caddy (HTTPS automatique), script d'installation, guide `GUIDE_VRAI_SITE.md` |
 
 ## Utilisation en local
 
