@@ -13,8 +13,8 @@ if [ ! -f .env ]; then
     exit 1
 fi
 . ./.env
-if [ -z "$DOMAINE" ] || [ -z "$EMAIL" ]; then
-    echo "Remplissez DOMAINE et EMAIL dans le fichier .env."
+if [ -z "$DOMAINE" ]; then
+    echo "Remplissez DOMAINE dans le fichier .env."
     exit 1
 fi
 

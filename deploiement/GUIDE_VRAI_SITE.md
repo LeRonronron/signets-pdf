@@ -77,7 +77,7 @@ git clone https://github.com/LeRonronron/signets-pdf.git && cd signets-pdf/deplo
 cp .env.exemple .env && nano .env
 ```
 
-Dans l'éditeur `nano`, remplissez `DOMAINE=` (par exemple `signets-pdf.fr`) et `EMAIL=`.
+Dans l'éditeur `nano`, remplissez `DOMAINE=` (par exemple `signets-pdf.com`).
 Enregistrez avec **Ctrl+O**, **Entrée**, puis quittez avec **Ctrl+X**. Enfin :
 
 ```bash

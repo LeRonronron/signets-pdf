@@ -1,9 +1,5 @@
-# Serveur web Caddy : HTTPS automatique (certificats Let's Encrypt gratuits).
-# Les valeurs {$DOMAINE} et {$EMAIL} viennent du fichier .env.
-
-{
-	email {$EMAIL}
-}
+# Serveur web Caddy : HTTPS automatique (certificats Let's Encrypt gratuits, sans e-mail).
+# La valeur {$DOMAINE} vient du fichier .env.
 
 # Page d'accueil : https://VOTRE-DOMAINE
 {$DOMAINE} {
